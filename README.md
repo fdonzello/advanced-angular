@@ -5,7 +5,7 @@ It's used as the driver for Advanced Angular Training sessions.
 
 ## Makefile
 
-Everything you need is to be up and running is contained in the Makefile.
+Everything you need to be up and running is contained in the Makefile.
 
 ## Setup
 
