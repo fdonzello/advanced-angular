@@ -1,0 +1,7 @@
+footer {
+    padding: 32px
+}
+
+.go-home:hover {
+    cursor: pointer;
+}

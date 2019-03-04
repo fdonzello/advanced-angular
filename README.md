@@ -9,20 +9,20 @@ Everything you need to be up and running is contained in the Makefile, unless yo
 
 ## Setup
 
-Run `make setup` to configure your environment.
+Run `npm run app:setup` to configure your environment.
 
 ## Run
 
-Run `make run` to start the development server.
+Run `npm run app:serve` to start the development server.
 
 ## Running unit tests
 
-Run `make test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Build
 
-Run `make build` to build the application that will be put into `app-build` folder.
+Run `npm run app:build` to build the application that will be put into `app-build` folder.
