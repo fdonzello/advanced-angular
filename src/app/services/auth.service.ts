@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { of, BehaviorSubject, Observable } from 'rxjs';
+import { isPlatformServer } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +8,18 @@ import { of, BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
   private localStorageTokenKey = "token";
 
-  isUserLoggedin = new BehaviorSubject<boolean>(
-    localStorage.getItem(this.localStorageTokenKey) && localStorage.getItem(this.localStorageTokenKey).length > 0
-  );
+  isUserLoggedin: BehaviorSubject<boolean>;
 
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platform: any) {
+    if (isPlatformServer(this.platform)) {
+      this.isUserLoggedin = new BehaviorSubject<boolean>(false);
+      return;
+    }
+
+    this.isUserLoggedin = new BehaviorSubject<boolean>(
+      localStorage.getItem(this.localStorageTokenKey) && localStorage.getItem(this.localStorageTokenKey).length > 0
+    );
+  }
 
   login(email: string, password: string) {
     this.isUserLoggedin.next(true);
@@ -19,6 +27,10 @@ export class AuthService {
   }
 
   logout() {
+    if (isPlatformServer(this.platform)) {
+      return;
+    }
+
     localStorage.removeItem(this.localStorageTokenKey);
     this.isUserLoggedin.next(false);
   }

@@ -26,3 +26,10 @@ Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.pr
 ## Build
 
 Run `npm run app:build` to build the application that will be put into `app-build` folder.
+
+## Json server
+Run `npm run app:server` to start the json server. The db is in the `server` folder.
+
+# Angular Universal
+Run `npm run app:universal:build` to build the app for Angular Universal. Then you can run the server with `npm run app:universal:serve`.
+
