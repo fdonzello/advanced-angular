@@ -6,9 +6,13 @@ import { of, BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
   private localStorageTokenKey = "token";
+  // localStorage might not be available, e.g. on the server
+  private localStorageAvailable = typeof (localStorage) !== 'undefined' && localStorage;
 
   isUserLoggedin = new BehaviorSubject<boolean>(
-    localStorage.getItem(this.localStorageTokenKey) && localStorage.getItem(this.localStorageTokenKey).length > 0
+    this.localStorageAvailable ?
+      localStorage.getItem(this.localStorageTokenKey) && localStorage.getItem(this.localStorageTokenKey).length > 0
+      : false
   );
 
   constructor() { }
@@ -19,7 +23,9 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem(this.localStorageTokenKey);
+    if (this.localStorageAvailable) {
+      localStorage.removeItem(this.localStorageTokenKey);
+    }
     this.isUserLoggedin.next(false);
   }
 
