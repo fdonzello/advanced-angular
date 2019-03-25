@@ -3,6 +3,7 @@
 This project showcases some advanced angular concepts.
 It's used as the driver for Advanced Angular Training sessions.
 
+
 ## Makefile
 
 Everything you need to be up and running is contained in the Makefile, unless you're on Windows but we're working on it.
