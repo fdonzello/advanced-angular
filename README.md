@@ -2,7 +2,6 @@
 
 This project showcases some advanced angular concepts.
 It's used as the driver for Advanced Angular Training sessions.
-Enjoy!
 
 
 ## Makefile
