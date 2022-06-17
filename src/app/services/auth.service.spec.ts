@@ -18,7 +18,7 @@ describe('AuthService', () => {
     authServiceSpy = TestBed.get(AuthService);
   });
 
-  it('should be created', () => {
+  it('should be created successfully', () => {
     expect(authServiceSpy).toBeTruthy();
   });
 

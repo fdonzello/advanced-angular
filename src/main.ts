@@ -6,9 +6,11 @@ import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
+
+  // TODO: override window console
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+    .catch(err => console.error(err));
 });
