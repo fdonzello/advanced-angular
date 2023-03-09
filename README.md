@@ -1,10 +1,10 @@
+This repo is now archived. Please refer to https://github.com/fdonzello/angular-advanced for the latest up-to-date showcase of Angular Advanced concepts.
+
+
 # Advanced Angular
 
 This project showcases some advanced angular concepts.
 It's used as the driver for Advanced Angular Training sessions.
-
-This repo is now archived. Please refer to https://github.com/fdonzello/angular-advanced for the latest up-to-date showcase of Angular Advanced concepts.
-
 
 ## Makefile
 
